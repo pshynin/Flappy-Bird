@@ -5,11 +5,10 @@ import org.testng.annotations.Test;
 /**
  * Created by pshynin on 6/10/17.
  */
-public class TestBranch2 {
+public class Test02 {
 
     @Test
     public void testBranch2() {
-        System.out.println("This is branch 1.0");
+        System.out.println("This is branch 1.0 test 2");
     }
-
 }
