@@ -81,3 +81,40 @@ public class FirstTest {
         }
     }
 }
+//Description
+//
+//In this assignment, you'll write a Java class that has an instance variable that is a String reference,
+// a constructor method, a set of overloaded methods, and a class static method.
+//
+// Write a Java class called MyUrl that represents a URL (Uniform Resource Locator)
+// with optional URL encoded parameters attached. It should have a private String instance variable representing the URL,
+// and have the following public methods:
+//
+//public MyUrl(String url) - this constructor initializes the base URL to the url parameter value.
+// It adds the protocol prefix http:// on the front if not present in the url parameter..
+// For example, if the parameter is www.amazon.com, it sets the mUrl instance variable to http://www.amazon.com
+// Note that a constructor has no return type, not even 'void'.
+//
+//public void addArgument(String name, String value) - this overloaded method adds a string argument to the URL
+// of the form name=value.  It URL encodes both the name and value parameters by calling the urlEncode() method on each.
+//
+//public void addArgument(String name, int ivalue) - this overloaded method adds an int argument to the URL
+// of the form name=value. It URL encodes the name parameter by calling urlEncode()..
+// The value is the string representation of the ivalue parameter. Use Integer.toString(ivalue)
+// to convert the integer to a string representation.
+//
+//public void addArgument(String name, double dvalue) - this overloaded method adds a double argument to the URL
+// of the form name=value. It URL encodes the name parameter by calling urlEncode()..
+// The value is the string representation of the dvalue parameter.
+// Use Double.toString(dvalue) to convert the double to a string representation.
+//
+//public String toString() - this method returns the object's URL value (the base URL plus all arguments).
+//
+//public static String urlEncode(String text) - this static method URL encodes its parameter 
+// String and returns the URL encoded value as the result.
+// It is called by the addArgument methods to encode their name and value parameters
+// before appending them to the object's URL. Use your earlier project code to implement
+// this method - instead of reading a line of text, the parameter string contains the text to be URL encoded,
+// and instead of printing the encoded string, it is returned as the method result.
+//
+//        ya zastryala v samom nachale na constructor method...
