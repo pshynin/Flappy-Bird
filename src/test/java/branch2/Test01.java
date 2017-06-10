@@ -9,7 +9,7 @@ public class Test01 {
 
     @Test
     public void testBranch2() {
-        System.out.println("This is branch 1.0 test 1");
+        System.out.println("This is branch 2.0 test 1");
     }
 
 }
