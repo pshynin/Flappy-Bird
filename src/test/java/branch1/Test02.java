@@ -12,4 +12,14 @@ public class Test02 {
         System.out.println("This is branch 1.0 Test 2");
     }
 
+    @Test
+    public void testBranch2() {
+        System.out.println("This is branch 1.0 Test 2");
+    }
+
+    @Test
+    public void testBranch3() {
+        System.out.println("This is branch 1.0 Test 2");
+    }
+
 }
