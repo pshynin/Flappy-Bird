@@ -1,2 +1,2 @@
-# test-architecture
-qa-project
+# test-pipeline-as-code
+@see jenkinsfile
