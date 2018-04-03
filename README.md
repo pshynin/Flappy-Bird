@@ -1,3 +1,3 @@
 # maven-project
 
-branch 3.0
+branch 3.0 (jenkinsfile)
