@@ -1,3 +1,0 @@
-# maven-project
-
-branch master
