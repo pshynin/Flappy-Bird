@@ -8,11 +8,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class FlappyBirdGame extends ApplicationAdapter {
     SpriteBatch batch;
     Background bg;
+    Bird bird;
 
     @Override
     public void create() {
         batch = new SpriteBatch();
         bg = new Background();
+        bird = new Bird();
     }
 
     @Override
@@ -22,11 +24,13 @@ public class FlappyBirdGame extends ApplicationAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         bg.render(batch);
+        bird.render(batch);
         batch.end();
     }
 
     private void update() {
         bg.update();
+        bird.update();
     }
 
     @Override
