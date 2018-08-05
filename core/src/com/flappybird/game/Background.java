@@ -9,7 +9,7 @@ public class Background {
         private Texture tx;
         private Vector2 pos;
 
-        public BGPicture(Vector2 pos) {
+        BGPicture(Vector2 pos) {
             this.tx = new Texture("back.png");
             this.pos = pos;
         }
@@ -18,7 +18,7 @@ public class Background {
     private int speed;
     private BGPicture[] backs;
 
-    public Background() {
+    Background() {
         speed = 4;
         backs = new BGPicture[2];
         backs[0] = new BGPicture(new Vector2(0, 0));
