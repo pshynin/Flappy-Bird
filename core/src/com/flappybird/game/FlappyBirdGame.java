@@ -7,14 +7,14 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class FlappyBirdGame extends ApplicationAdapter {
     private SpriteBatch batch;
-    private Background bg;
+    private Background back;
     private Bird bird;
     private Wall wall;
 
     @Override
     public void create() {
         batch = new SpriteBatch();
-        bg = new Background();
+        back = new Background();
         bird = new Bird();
         wall = new Wall();
     }
@@ -25,14 +25,14 @@ public class FlappyBirdGame extends ApplicationAdapter {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        bg.render(batch);
+        back.render(batch);
         bird.render(batch);
         wall.render(batch);
         batch.end();
     }
 
     private void update() {
-        bg.update();
+        back.update();
         bird.update();
         wall.update();
     }

@@ -23,32 +23,32 @@ public class Wall {
             pos.x -= speed;
             if (pos.x < -50) {
                 pos.x = 800;
-                offset = new Random().nextInt(250);
+                this.offset = new Random().nextInt(250);
             }
         }
     }
 
-    private Texture img;
     private WallPair[] walls;
-    private int wallDist;
+    private Texture img;
+    private int distX;
+    private int distY;
 
     Wall() {
-        this.img = new Texture("wall.png");
-        this.walls = new WallPair[4];
-        int startX = 400;
-        wallDist = 250;
+        img = new Texture("wall.png");
+        walls = new WallPair[4];
+        distX = 400; //how far from beginning the first wall starts
+        distY = 250; //distance between walls vertical
 
         for (int i = 0; i < walls.length; i++) {
-            walls[i] = new WallPair(new Vector2(startX, 0));
-            startX += 220;
+            walls[i] = new WallPair(new Vector2(distX, 0));
+            distX += 220; //distance between next walls horizontal
         }
     }
 
     public void render(SpriteBatch batch) {
         for (WallPair wp : walls) {
-            batch.draw(img, wp.pos.x, wp.pos.y);
-            //TODO fix walls height !!!
-            batch.draw(img, wp.pos.x, wp.pos.y + wallDist + img.getHeight() - wp.offset);
+            batch.draw(img, wp.pos.x, wp.pos.y - wp.offset);
+            batch.draw(img, wp.pos.x, wp.pos.y + this.distY + img.getHeight() - wp.offset);
         }
     }
 
