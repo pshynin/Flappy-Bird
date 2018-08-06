@@ -2,6 +2,7 @@ package com.flappybird.game;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 import java.util.Random;
@@ -10,13 +11,15 @@ public class Wall {
 
     class WallPair {
         Vector2 pos;
+        Rectangle emptySpace;
         float speed;
         int offset;
 
         WallPair(Vector2 pos) {
             this.pos = pos;
-            this.speed = 2;
-            this.offset = new Random().nextInt(250);
+            speed = 2;
+            offset = new Random().nextInt(250);
+            emptySpace = new Rectangle(this.pos.x, this.pos.y - offset + 300, 50, distY);
         }
 
         void update() {
@@ -25,13 +28,14 @@ public class Wall {
                 pos.x = 800;
                 this.offset = new Random().nextInt(250);
             }
+            emptySpace.x = pos.x;
         }
     }
 
-    private WallPair[] walls;
+    static WallPair[] walls;
+    int distX;
+    int distY;
     private Texture img;
-    private int distX;
-    private int distY;
 
     Wall() {
         img = new Texture("wall.png");
@@ -39,6 +43,10 @@ public class Wall {
         distX = 400; //how far from beginning the first wall starts
         distY = 250; //distance between walls vertical
 
+/*        for (WallPair wp : walls) {
+            wp = new WallPair(new Vector2(distX, 0));
+            distX += 220;
+        }*/
         for (int i = 0; i < walls.length; i++) {
             walls[i] = new WallPair(new Vector2(distX, 0));
             distX += 220; //distance between next walls horizontal
@@ -55,6 +63,14 @@ public class Wall {
     public void update() {
         for (WallPair wp : walls) {
             wp.update();
+        }
+    }
+
+    public void recreate() {
+        int distX = 400;
+        for (int i = 0; i < walls.length; i++) {
+            walls[i] = new WallPair(new Vector2(distX, 0));
+            distX += 220; //distance between next walls horizontal
         }
     }
 }

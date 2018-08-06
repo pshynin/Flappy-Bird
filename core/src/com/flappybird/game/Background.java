@@ -6,8 +6,8 @@ import com.badlogic.gdx.math.Vector2;
 
 public class Background {
     class BGPicture {
+        Vector2 pos;
         private Texture tx;
-        private Vector2 pos;
 
         BGPicture(Vector2 pos) {
             this.tx = new Texture("back.png");

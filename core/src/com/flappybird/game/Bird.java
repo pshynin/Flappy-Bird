@@ -7,8 +7,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
 public class Bird {
+    Vector2 pos;
     private Texture img;
-    private Vector2 pos;
     private float vecY;
     private float gravity;
 
@@ -29,5 +29,10 @@ public class Bird {
         }
         vecY += gravity;
         pos.y += vecY;
+    }
+
+    public void recreate() {
+        this.pos = new Vector2(100, 380);
+        vecY = 0;
     }
 }
