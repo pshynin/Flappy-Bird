@@ -1,13 +1,7 @@
 # Flappy-Bird
 Simple cross platform desktop GDX game.
 
-```flow
-st=>start: Login
-op=>operation: Login operation
-cond=>condition: Successful Yes or No?
-e=>end: To admin
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
+Note left of A: Note to the\n left of A
+Note right of A: Note to the\n right of A
+Note over A: Note over A
+Note over A,B: Note over both A and B
